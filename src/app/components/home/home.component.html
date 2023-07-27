@@ -1,0 +1,32 @@
+<div class="container text-center">
+  <div class="titles py-5">
+    <h1>Lyrics Finder</h1>
+    <h3 class="py-3">Get the complete lyrics of any given track</h3>
+  </div>
+  <form class="row">
+    <div class="col">
+      <input type="text" placeholder="Track" class="form-control form-control-lg" name="track" [(ngModel)]="songTitle">
+    </div>
+    <div class="col-auto align-self-center">
+      <button type="submit" class="btn btn-primary px-5 py-2" (click)="searchSong()">Find</button>
+    </div>
+  </form>
+
+  <div *ngIf="searchResults">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let hit of searchResults">
+        <div class="card mb-4">
+          <img class="card-img-top" src="{{ hit.result.header_image_url }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ hit.result.title }}</h5>
+            <p class="card-text">Artist: {{ hit.result.primary_artist.name }}</p>
+            <button type="submit" class="btn btn-primary px-5 py-2" (click)="searchLyrics()">Find</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
