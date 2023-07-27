@@ -1,0 +1,14 @@
+<h2 *ngIf="searchResults" class="my-5">Results</h2>
+<div class="row my-5">
+  <div class="col-md-3" *ngFor="let song of searchResults">
+    <div class="card mb-4">
+      <img class="card-img-top img-fluid" src="{{ song.result.header_image_url }}" alt="cover-song">
+      <div class="card-body">
+        <h5 class="card-title">{{ song.result.title }}</h5>
+        <p class="card-text">Artist: {{ song.result.primary_artist.name }}</p>
+        <button type="submit" class="btn btn-primary px-5 py-2">Lyrics</button>
+      </div>
+    </div>
+  </div>
+</div>
+
