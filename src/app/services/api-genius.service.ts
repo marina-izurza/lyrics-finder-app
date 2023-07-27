@@ -19,7 +19,7 @@ export class ApiGeniusService {
 
     const params = new HttpParams()
       .set('q', title)
-      .set('per_page', '10')
+      .set('per_page', '20')
       .set('page', '1');
 
     return this.http.get<any>(`${this.apiUrl}/search/`, { headers, params });
