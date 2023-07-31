@@ -1,0 +1,26 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .titles {
+    h1 {
+      font-weight: 600;
+      font-size: 70px;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+
+  input {
+    width: 500px;
+  }
+}

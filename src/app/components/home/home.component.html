@@ -1,19 +1,18 @@
-<div class="container text-center">
-  <div class="titles py-5">
-    <h1>Lyrics Finder</h1>
-    <h3 class="py-3">Get the complete lyrics of any given track</h3>
+<div class="container">
+  <div class="titles py-5 text-start">
+    <h1>Home</h1>
+    <h3>Get the complete lyrics of any given track</h3>
   </div>
   <form class="row">
     <div class="col">
-      <input type="text" placeholder="Track" class="form-control form-control-lg" name="track" [(ngModel)]="songTitle">
+      <input type="text" placeholder="Search songs" class="form-control form-control-lg" name="track" [(ngModel)]="songTitle"
+        (ngModelChange)="onSearchChange($event)">
     </div>
-    <div class="col-auto align-self-center">
-      <button type="submit" class="btn btn-primary px-5 py-2" (click)="searchSong()">Find</button>
-    </div>
+
   </form>
 
   <!-- <app-carousel></app-carousel> -->
 
-  <app-results [searchResults]="searchResults"></app-results>
-
 </div>
+
+<app-results [searchResults]="searchResults"></app-results>

@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ResultsComponent } from './components/results/results.component';
 import { LyricsComponent } from './components/lyrics/lyrics.component';
+import { TrendingComponent } from './components/trending/trending.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LyricsComponent } from './components/lyrics/lyrics.component';
     HomeComponent,
     CarouselComponent,
     ResultsComponent,
-    LyricsComponent
+    LyricsComponent,
+    TrendingComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ export class ApiGeniusService {
   apiUrl = 'https://genius-song-lyrics1.p.rapidapi.com';
   apiKey = 'b1001027bdmsh8ce4c05f5e05fd8p1302d2jsn21a09e2663a4';
 
+  private searchResults: any[];
+
   constructor(private http: HttpClient) {}
 
   public getSongLyrics(title: string): Observable<any> {
@@ -41,5 +43,13 @@ export class ApiGeniusService {
         return throwError('Error en la solicitud'); // Puedes personalizar el mensaje de error si lo deseas
       })
     );
+  }
+
+  public setSearchResults(results: any[]) {
+    this.searchResults = results;
+  }
+
+  public getSearchResults() {
+    return this.searchResults;
   }
 }

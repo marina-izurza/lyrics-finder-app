@@ -1,0 +1,28 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.container {
+  background: rgb(255,117,117);
+  background: linear-gradient(157deg, rgba(255,117,117,1) 0%, rgba(125,125,255,1) 89%);
+
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  .lyrics {
+    font-size: 21px;
+  }
+
+  .foot {
+    font-style: italic;
+    padding-bottom: 15px;
+  }
+}
+
