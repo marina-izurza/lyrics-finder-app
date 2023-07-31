@@ -1,4 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -8,5 +9,9 @@ import { Component, Input, Output } from '@angular/core';
 export class ResultsComponent {
   @Input() searchResults: any[];
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  public viewLyrics(songId: number) {
+    this.router.navigate(['/lyrics', songId]);
+  }
 }

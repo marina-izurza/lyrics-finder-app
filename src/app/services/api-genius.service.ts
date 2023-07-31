@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -23,5 +24,22 @@ export class ApiGeniusService {
       .set('page', '1');
 
     return this.http.get<any>(`${this.apiUrl}/search/`, { headers, params });
+  }
+
+  public getSongDetails(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'X-RapidAPI-Key': this.apiKey,
+      'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
+    });
+
+    return this.http.get<any>(`${this.apiUrl}/song/lyrics/`, {
+      headers,
+      params: { id: id.toString() }, // Convierte el ID en una cadena para pasarlo como parámetro
+    }).pipe(
+      catchError((error) => {
+        console.error('Error obteniendo detalles de la canción: ', error);
+        return throwError('Error en la solicitud'); // Puedes personalizar el mensaje de error si lo deseas
+      })
+    );
   }
 }

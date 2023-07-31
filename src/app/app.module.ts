@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ResultsComponent } from './components/results/results.component';
+import { LyricsComponent } from './components/lyrics/lyrics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CarouselComponent,
-    ResultsComponent
+    ResultsComponent,
+    LyricsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div *ngIf="songDetails" class="container text-center">
+  <div class="titles py-5">
+    <h1>{{ songDetails.lyrics.tracking_data.title }}</h1>
+    <h3 class="py-3">Artist: {{ songDetails.lyrics.tracking_data.primary_artist }}</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <img class="img-fluid" src="{{ songDetails.lyrics.header_image_url }}" alt="cover-song">
+    </div>
+  </div>
+  <div class="lyrics py-4">
+    <h2>Lyrics</h2>
+    <pre [innerHTML]="songDetails.lyrics.lyrics.body.html"></pre>
+  </div>
+</div>
